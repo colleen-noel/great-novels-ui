@@ -1,0 +1,24 @@
+.page {
+  margin: 60 px auto 0;
+  text-align: center;
+  width: 60%;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+input {
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 5px;
+  margin: 20px 0;
+  outline: none;
+}
+
+.novel {
+  font-size: 20px;
+  margin-bottom: 10px;
+}

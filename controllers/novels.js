@@ -1,6 +1,6 @@
-const models = require('../models')
+import models from '../models'
 
-const getAllNovels = async (request, response) => {
+export const getAllNovels = async (request, response) => {
   const novels = await models.Novels.findAll({
     include: [{ model: models.Authors }, { model: models.Genres }]
   })
@@ -8,7 +8,7 @@ const getAllNovels = async (request, response) => {
   return response.send(novels)
 }
 
-const getNovelByIdOrTitle = async (request, response) => {
+export const getNovelByIdOrTitle = async (request, response) => {
   const { identifier } = request.params
 
   const novel = await models.Novels.findOne({
@@ -26,4 +26,4 @@ const getNovelByIdOrTitle = async (request, response) => {
     : response.sendStatus(404)
 }
 
-module.exports = { getAllNovels, getNovelByIdOrTitle }
+
