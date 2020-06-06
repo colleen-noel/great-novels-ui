@@ -3,5 +3,3 @@ export default (connection, Sequelize, Authors) => connection.define('novels', {
   title: { type: Sequelize.STRING, allowNull: false },
   authorId: { type: Sequelize.INTEGER, references: { model: Authors, key: 'id' } },
 })
-
-
