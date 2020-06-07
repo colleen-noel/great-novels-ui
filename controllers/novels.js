@@ -25,5 +25,3 @@ export const getNovelByIdOrTitle = async (request, response) => {
     ? response.send(novel)
     : response.sendStatus(404)
 }
-
-
