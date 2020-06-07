@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Novel from './Novel'
-import Search from './Search'
+import Novel from '../components/Novel'
+import Page from '../components/Page'
+import Search from '../components/Search'
+import Title from '../components/Title'
 import { filterNovels, retrieveNovels } from '../utils/novels'
 
 
@@ -26,12 +28,12 @@ export default () => {
   }, [searchTerm])
 
   return (
-    <div className="page">
-      <div className="title">Great Novels </div>
+    <Page>
+      <Title />
       <Search term={searchTerm} setter={setSearchTerm} />
       {
         filteredNovelList.map(novel => (<Novel key={novel.id} title={novel.title} author={novel.author} />))
       }
-    </div>
+    </Page>
   )
 }
