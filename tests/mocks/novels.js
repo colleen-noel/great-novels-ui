@@ -18,6 +18,7 @@ export const novelsList = [{
     }],
 }]
 
+
 export const singleNovel = {
   id: 4,
   title: 'War and Peace',

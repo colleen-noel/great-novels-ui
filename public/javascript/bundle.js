@@ -90,11 +90,11 @@
 /*!***************************!*\
   !*** ./actions/novels.js ***!
   \***************************/
-/*! exports provided: default */
+/*! exports provided: fetchNovels */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (async () => {\n  const {\n    data\n  } = await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(`${\"http://localhost:1337/api\"}/novels`); // eslint-disable-line no-undef\n\n  return data;\n});\n\n//# sourceURL=webpack:///./actions/novels.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"fetchNovels\", function() { return fetchNovels; });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n/* eslint-disable import/prefer-default-export */\n\nconst fetchNovels = async () => {\n  const {\n    data\n  } = await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(`${\"http://localhost:1337/api\"}/novels`); // eslint-disable-line no-undef\n\n  return data;\n};\n\n//# sourceURL=webpack:///./actions/novels.js?");
 
 /***/ }),
 
@@ -939,7 +939,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"filterNovels\", function() { return filterNovels; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"retrieveNovels\", function() { return retrieveNovels; });\n/* harmony import */ var _actions_novels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/novels */ \"./actions/novels.js\");\n\nconst filterNovels = (list, term) => list.filter(novel => novel.title.toLowerCase().includes(term.toLowerCase()));\nconst retrieveNovels = async () => {\n  const novels = await Object(_actions_novels__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n  return novels;\n};\n\n//# sourceURL=webpack:///./utils/novels.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"filterNovels\", function() { return filterNovels; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"retrieveNovels\", function() { return retrieveNovels; });\n/* harmony import */ var _actions_novels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/novels */ \"./actions/novels.js\");\n\nconst filterNovels = (list, term) => list.filter(novel => novel.title.toLowerCase().includes(term.toLowerCase()));\nconst retrieveNovels = async () => {\n  const novels = await Object(_actions_novels__WEBPACK_IMPORTED_MODULE_0__[\"fetchNovels\"])();\n  return novels;\n};\n\n//# sourceURL=webpack:///./utils/novels.js?");
 
 /***/ })
 

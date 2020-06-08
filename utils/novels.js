@@ -1,4 +1,4 @@
-import fetchNovels from '../actions/novels'
+import { fetchNovels } from '../actions/novels'
 
 export const filterNovels = (list, term) => list.filter(novel => (
   novel.title.toLowerCase().includes(term.toLowerCase())

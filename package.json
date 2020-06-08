@@ -10,7 +10,7 @@
     "dev:migrate": "./node_modules/.bin/env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./configs/sequelize.js",
     "lint": "./node_modules/.bin/eslint --format codeframe --ext jsx.",
     "lint:fix": "./node_modules/.bin/eslint --fix --format codeframe .",
-    "test": "./node_modules/.bin/mocha --require @babel/register tests/**/*.test.js"
+    "test": "./node_modules/.bin/mocha --require @babel/register --require ./tests/setup.js ./tests/**/*.test.js*"
   },
   "repository": {
     "type": "git",
@@ -39,11 +39,14 @@
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
     "@babel/register": "^7.10.1",
+    "axios-mock-adapter": "^1.18.1",
     "babel-loader": "^8.1.0",
     "babel-watch": "^7.0.0",
     "chai": "^4.2.0",
     "concurrently": "^5.2.0",
     "env-cmd": "^10.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.20.1",
