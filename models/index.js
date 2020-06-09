@@ -1,10 +1,10 @@
-const Sequelize = require('sequelize')
-const allConfigs = require('../configs/sequelize')
+import Sequelize from 'sequelize'
+import allConfigs from '../configs/sequelize'
 
-const AuthorsModel = require('./authors')
-const GenresModel = require('./genres')
-const NovelsModel = require('./novels')
-const NovelsGenresModel = require('./novelsGenres')
+import AuthorsModel from './authors'
+import GenresModel from './genres'
+import NovelsModel from './novels'
+import NovelsGenresModel from './novelsGenres'
 
 const environment = process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
 const {
@@ -24,7 +24,7 @@ Authors.hasMany(Novels)
 Genres.belongsToMany(Novels, { through: NovelsGenres })
 Novels.belongsToMany(Genres, { through: NovelsGenres })
 
-module.exports = {
+export default {
   Authors,
   Genres,
   Novels,
